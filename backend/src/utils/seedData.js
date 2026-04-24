@@ -43,6 +43,14 @@ const initialProjects = [
 ];
 
 const seedInitialData = async () => {
+  // Check if MongoDB is connected
+  const mongoose = require("mongoose");
+  if (mongoose.connection.readyState !== 1) {
+    // eslint-disable-next-line no-console
+    console.log("⏭️  Skipping seed data - MongoDB not connected");
+    return;
+  }
+
   const adminEmail = process.env.ADMIN_EMAIL || "admin@example.com";
   const adminPassword = process.env.ADMIN_PASSWORD || "admin123";
 
