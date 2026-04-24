@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: portfolio-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: MONGO_URI
+        fromDatabase:
+          name: portfolio
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        value: sandeep636764@gmail.com
+      - key: ADMIN_PASSWORD
+        generateValue: true
+      - key: CLIENT_URL
+        value: https://portfolio.example.com
+      - key: SMTP_SERVICE
+        value: gmail
+      - key: NODE_ENV
+        value: production
+
+databases:
+  - name: portfolio
+    databaseName: portfolio
+    user: portfoliouser

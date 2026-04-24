@@ -29,11 +29,3 @@ coverage/
 
 # Misc
 .cache/
-tmp/
-logs/
-*.log
-
-# Development
-.env.development.local
-.env.test.local
-.env.production.local

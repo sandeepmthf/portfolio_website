@@ -9,10 +9,6 @@ yarn-error.log*
 .env.local
 .env.*.local
 
-# Build outputs
-dist/
-build/
-
 # IDE
 .vscode/
 .idea/
@@ -24,16 +20,13 @@ build/
 .DS_Store
 Thumbs.db
 
+# Logs
+logs/
+*.log
+
 # Testing
 coverage/
 
 # Misc
 .cache/
 tmp/
-logs/
-*.log
-
-# Development
-.env.development.local
-.env.test.local
-.env.production.local
