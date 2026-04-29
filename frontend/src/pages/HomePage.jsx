@@ -47,9 +47,10 @@ export default function HomePage() {
         const params = activeCategory === "All" ? {} : { category: activeCategory };
         const projectsRes = await api.get("/projects", { params });
         setProjects(projectsRes.data);
-      } catch (_error) {
+      } catch (error) {
         setProjects([]);
-        setProjectsError("Projects are not loading. Start backend server and configure MongoDB in server/.env.");
+        console.error("Failed to load projects:", error);
+        setProjectsError("Unable to load projects. Please ensure backend server is running on http://localhost:5000");
       } finally {
         setLoading(false);
       }
