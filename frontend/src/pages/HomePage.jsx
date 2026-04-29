@@ -46,7 +46,7 @@ export default function HomePage() {
       try {
         const params = activeCategory === "All" ? {} : { category: activeCategory };
         const projectsRes = await api.get("/projects", { params });
-        setProjects(projectsRes.data);
+        setProjects(Array.isArray(projectsRes.data) ? projectsRes.data : []);
       } catch (error) {
         setProjects([]);
         console.error("Failed to load projects:", error);
