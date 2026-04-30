@@ -1,6 +1,5 @@
-# Deployment Checklist
 
-Follow this checklist to deploy your portfolio to production.
+
 
 ## Pre-Deployment
 
