@@ -30,17 +30,7 @@ The backend will run on `http://localhost:5000`
 In a new terminal window:
 
 ```bash
-cd frontend
 
-# Copy the .env.example to .env
-cp .env.example .env
-
-# Install dependencies
-npm install
-
-# Start the development server
-npm run dev
-```
 
 The frontend will run on `http://localhost:5173`
 
